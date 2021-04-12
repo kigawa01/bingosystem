@@ -1,0 +1,5 @@
+name: BingoSystem
+version: ${project.version}
+main: net.kigawa.plugin.kyosaba.system.bingosystem.BingoSystem
+api-version: 1.16
+authors: [ kigawa ]
