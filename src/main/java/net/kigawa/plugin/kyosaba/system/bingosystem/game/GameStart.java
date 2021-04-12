@@ -7,9 +7,9 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 
-public class Game implements CommandExecutor {
+public class GameStart implements CommandExecutor {
     BingoSystem plugin;
-    public Game(BingoSystem bingoSystem){
+    public GameStart(BingoSystem bingoSystem){
         plugin=bingoSystem;
     }
     @Override
