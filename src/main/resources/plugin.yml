@@ -6,5 +6,5 @@ authors: [ kigawa ]
 commands:
   startbingo:
     description: start bingo
-    usage: /<command>
+    usage: /<command> <world> <startx,y,z> <endx,y,z>
     permission: bingosystem.game.startbingo
