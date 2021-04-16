@@ -49,9 +49,10 @@ public class GameSend implements CommandExecutor {
                 int price=plugin.getConfig().getInt("price");
                 if(plugin.getServer().dispatchCommand(plugin.getServer().getConsoleSender(), "money take "+sender.getName()+" "+price)){
                     player.teleport(gameData.startLoc);
-                    List<BingoData> bingoDataList=gameData.bingoData;
-                    BingoData bingoData=bingoDataList.get(bingoDataList.indexOf(null));
-                    player.sendMessage(ChatColor.GOLD+"あなたの席は"+ChatColor.GREEN+bingoData.number+"番"+ChatColor.GOLD+"です");
+                    List<GameBord> gameBords=gameData.gameBords;
+                    GameBord gameBord=gameBords.get(gameBords.indexOf(null));
+                    player.sendMessage(ChatColor.GOLD+"あなたの席は"+ChatColor.GREEN+gameBord.number+"番"+ChatColor.GOLD+"です");
+                    gameData.setPlayer(player);
                 }
             }else {
                 player.sendMessage( ChatColor.DARK_RED+ "ビンゴの空きがありません");

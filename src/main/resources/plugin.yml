@@ -4,7 +4,10 @@ main: net.kigawa.plugin.kyosaba.system.bingosystem.BingoSystem
 api-version: 1.16
 authors: [ kigawa ]
 commands:
-  startbingo:
-    description: start bingo
+  sendbingo:
+    description: send to bingo
     usage: /<command> <world> <startx,y,z> <endx,y,z>
     permission: bingosystem.game.startbingo
+  startbingo:
+    description: start bingo
+    usage: /<command> <name>

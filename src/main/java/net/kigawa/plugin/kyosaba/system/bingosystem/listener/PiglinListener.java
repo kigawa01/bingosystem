@@ -1,4 +1,4 @@
-package net.kigawa.plugin.kyosaba.system.bingosystem.pigrin;
+package net.kigawa.plugin.kyosaba.system.bingosystem.listener;
 
 import net.kigawa.plugin.kyosaba.system.bingosystem.BingoSystem;
 import org.bukkit.entity.Entity;
