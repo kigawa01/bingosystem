@@ -8,6 +8,7 @@ import java.util.List;
 
 public class Game extends BukkitRunnable {
     BingoSystem plugin;
+    boolean canStart;
     public Game(BingoSystem bingoSystem, List<DataTask> tasks,String name){
         plugin=bingoSystem;
         DataTask dataTask=new DataTask(name);
@@ -18,6 +19,8 @@ public class Game extends BukkitRunnable {
 
     @Override
     public void run() {
+        if(canStart=false){
 
+        }
     }
 }
