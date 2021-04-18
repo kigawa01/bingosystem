@@ -4,6 +4,7 @@ import net.kigawa.plugin.kigawautillib.KigawaUtilLib;
 import net.kigawa.plugin.kigawautillib.data.DataTask;
 import net.kigawa.plugin.kyosaba.system.bingosystem.config.BingoSystemConfigData;
 import net.kigawa.plugin.kyosaba.system.bingosystem.game.GameList;
+import net.kigawa.plugin.kyosaba.system.bingosystem.game.GameListener;
 import net.kigawa.plugin.kyosaba.system.bingosystem.game.GameSend;
 import net.kigawa.plugin.kyosaba.system.bingosystem.game.GameStart;
 import net.kigawa.plugin.kyosaba.system.bingosystem.listener.PiglinListener;
@@ -18,6 +19,7 @@ public final class BingoSystem extends JavaPlugin {
     KigawaUtilLib util;
     GameList gameList;
     List<DataTask> task;
+
     @Override
     public void onEnable() {
         // Plugin startup logic
@@ -30,6 +32,7 @@ public final class BingoSystem extends JavaPlugin {
         pluginManager.registerEvents(new PiglinListener(plugin),plugin);
         plugin.getCommand("sendbingo").setExecutor(new GameSend(plugin));
         plugin.getCommand("startbingo").setExecutor(new GameStart(plugin));
+        pluginManager.registerEvents(new GameListener(plugin),plugin);
     }
 
     @Override
