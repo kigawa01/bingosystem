@@ -32,7 +32,12 @@ public class GameList {
     public GameData getGameData(String name){
         GameEquals gameEquals=new GameEquals("isMachName");
         gameEquals.name=name;
-        return gameDataList.get(gameDataList.indexOf(gameEquals));
+        int index=gameDataList.indexOf(gameEquals);
+        if (0<=index) {
+            return gameDataList.get(index);
+        }else {
+            return null;
+        }
     }
     public GameData getGameData(Location location){
         int index=gameDataList.indexOf(location);

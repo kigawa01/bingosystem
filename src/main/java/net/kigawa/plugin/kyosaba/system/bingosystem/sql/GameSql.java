@@ -1,4 +1,4 @@
-package net.kigawa.plugin.kyosaba.system.bingosystem.game;
+package net.kigawa.plugin.kyosaba.system.bingosystem.sql;
 
 import net.kigawa.plugin.kigawautillib.sql.DataSql;
 

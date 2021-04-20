@@ -6,8 +6,12 @@ authors: [ kigawa ]
 commands:
   sendbingo:
     description: send to bingo
-    usage: /<command> <world> <startx,y,z> <endx,y,z>
+    usage: /sendbingo
     permission: bingosystem.game.startbingo
   startbingo:
     description: start bingo
-    usage: /<command> <name>
+    usage: /startbingo <name>
+    permission: bingosystem.game.start
+  GameCreate:
+    description: create game
+    usage: /gamecreate <subcommand>

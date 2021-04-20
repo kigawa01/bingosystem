@@ -37,6 +37,6 @@ public class GameSend implements CommandExecutor {
             }
 
 
-        return false;
+        return true;
     }
 }

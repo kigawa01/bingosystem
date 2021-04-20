@@ -2,7 +2,9 @@ package net.kigawa.plugin.kyosaba.system.bingosystem;
 
 import net.kigawa.plugin.kigawautillib.KigawaUtilLib;
 import net.kigawa.plugin.kigawautillib.data.DataTask;
+import net.kigawa.plugin.kigawautillib.gate.Gate;
 import net.kigawa.plugin.kyosaba.system.bingosystem.config.BingoSystemConfigData;
+import net.kigawa.plugin.kyosaba.system.bingosystem.create.CreateCommand;
 import net.kigawa.plugin.kyosaba.system.bingosystem.game.GameList;
 import net.kigawa.plugin.kyosaba.system.bingosystem.game.GameListener;
 import net.kigawa.plugin.kyosaba.system.bingosystem.game.GameSend;
@@ -19,6 +21,7 @@ public final class BingoSystem extends JavaPlugin {
     KigawaUtilLib util;
     GameList gameList;
     List<DataTask> task;
+    Gate gate;
 
     @Override
     public void onEnable() {
@@ -28,10 +31,12 @@ public final class BingoSystem extends JavaPlugin {
         util=(KigawaUtilLib) plugin.getServer().getPluginManager().getPlugin("KigawaUtilLib");
 
         new BingoSystemConfigData(plugin).getConfig();
+        gate=new Gate(plugin);
 
         pluginManager.registerEvents(new PiglinListener(plugin),plugin);
         plugin.getCommand("sendbingo").setExecutor(new GameSend(plugin));
         plugin.getCommand("startbingo").setExecutor(new GameStart(plugin));
+        plugin.getCommand("GameCreate").setExecutor(new CreateCommand(plugin));
         pluginManager.registerEvents(new GameListener(plugin),plugin);
     }
 
@@ -44,5 +49,8 @@ public final class BingoSystem extends JavaPlugin {
     }
     public List<DataTask> getTask(){
         return task;
+    }
+    public Gate getGate(){
+        return gate;
     }
 }

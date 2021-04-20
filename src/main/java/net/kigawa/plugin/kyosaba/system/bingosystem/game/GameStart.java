@@ -19,10 +19,14 @@ public class GameStart implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         GameData gameData=gameList.getGameData(label);
-        for (GameBord gameBord : gameData.gameBords) {
-            gameBord.isLottery = false;
+        if (gameData!=null) {
+            for (GameBord gameBord : gameData.gameBords) {
+                gameBord.isLottery = false;
+            }
+            new Game(plugin, plugin.getTask(), gameData).runTaskTimer(plugin, 0, 100);
+            return true;
+        }else {
+            return false;
         }
-        new Game(plugin,plugin.getTask(),gameData).runTaskTimer(plugin,0,100);
-        return true;
     }
 }
