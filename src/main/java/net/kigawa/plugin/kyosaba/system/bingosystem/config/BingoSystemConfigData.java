@@ -16,6 +16,7 @@ public class BingoSystemConfigData extends ConfigData {
     public void addDefault(){
         config.addDefault("version",1);
         config.addDefault("price",500);
+        config.addDefault("gate table name","gate");
 
         plugin.saveConfig();
     }
