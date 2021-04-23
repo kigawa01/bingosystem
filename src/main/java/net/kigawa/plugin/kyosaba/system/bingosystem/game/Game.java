@@ -2,6 +2,8 @@ package net.kigawa.plugin.kyosaba.system.bingosystem.game;
 
 import net.kigawa.plugin.kigawautillib.data.DataTask;
 import net.kigawa.plugin.kyosaba.system.bingosystem.BingoSystem;
+import org.bukkit.Material;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import java.awt.*;
@@ -64,6 +66,7 @@ public class Game extends BukkitRunnable {
                         gameData.piglinLootNumber=0;
                     }
                     gameBordList.get(gameData.piglinLootNumber).player.sendMessage(Color.GREEN+"次はあなたの版です");
+                    gameBordList.get(gameData.piglinLootNumber).player.getInventory().addItem(new ItemStack(Material.GOLD_INGOT));
                     gameData.isPiglinLoot=false;
                 }
             }
