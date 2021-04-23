@@ -35,7 +35,7 @@ public class GameData {
             BingoSystem bingoSystem, String name, Location startLoc,
             Location lotteryLoc1, Location lotteryLoc2,
             List<UUID[]> slotUUID,
-            List<UUID> uuid,
+            List<UUID> pigUuid,
             List<Location[]> buttonLoc
     ){
         plugin=bingoSystem;
@@ -47,7 +47,7 @@ public class GameData {
         for (int i=0;it.hasNext();i++){
             gameBords.add(new GameBord(plugin, it.next(),i ,buttonLoc.get(i)));
         }
-        Iterator<UUID> uuidIterator= uuid.iterator();
+        Iterator<UUID> uuidIterator= pigUuid.iterator();
         for (int i=0;uuidIterator.hasNext();i++){
             piglin[0]=(Piglin)plugin.getServer().getEntity(uuidIterator.next());
         }

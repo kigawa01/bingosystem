@@ -2,6 +2,7 @@ package net.kigawa.plugin.kyosaba.system.bingosystem.game;
 
 import net.kigawa.plugin.kyosaba.system.bingosystem.BingoSystem;
 import net.kigawa.plugin.kyosaba.system.bingosystem.data.GameEquals;
+import net.kigawa.plugin.kyosaba.system.bingosystem.data.GameTemplate;
 import org.bukkit.Location;
 
 import java.util.Iterator;
@@ -66,5 +67,9 @@ public class GameList {
     }
     public boolean hasSlotSet(){
         return gameDataList.contains(new GameEquals("hasSlotSet"));
+    }
+    public void createGame(GameTemplate temPlate){
+        gameDataList.add(new GameData(plugin,temPlate.name,temPlate.startLoc,
+                temPlate.lotteryLoc,temPlate.lotteryLoc1,temPlate.slotUUIDList,temPlate.pigUuid,temPlate.buttonLoc));
     }
 }

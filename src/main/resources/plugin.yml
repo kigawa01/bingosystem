@@ -13,5 +13,5 @@ commands:
     usage: /startbingo <name>
     permission: bingosystem.game.start
   GameCreate:
-    description: create game
-    usage: /gamecreate <subcommand>
+    description: create somethings
+    usage: /bingosystem <subcommand>

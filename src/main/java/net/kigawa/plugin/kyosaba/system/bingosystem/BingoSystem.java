@@ -36,7 +36,7 @@ public final class BingoSystem extends JavaPlugin {
         pluginManager.registerEvents(new PiglinListener(plugin),plugin);
         plugin.getCommand("sendbingo").setExecutor(new GameSend(plugin));
         plugin.getCommand("startbingo").setExecutor(new GameStart(plugin));
-        plugin.getCommand("GameCreate").setExecutor(new CreateCommand(plugin));
+        plugin.getCommand("bingosystem").setExecutor(new CreateCommand(plugin));
         pluginManager.registerEvents(new GameListener(plugin),plugin);
     }
 
