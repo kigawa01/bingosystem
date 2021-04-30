@@ -1,0 +1,6 @@
+# when game send
+price: 500
+gate table name: gate
+game table name: game
+# Don't touch
+version: 1
