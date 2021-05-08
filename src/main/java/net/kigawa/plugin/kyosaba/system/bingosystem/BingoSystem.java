@@ -22,6 +22,7 @@ public final class BingoSystem extends JavaPlugin {
     GameList gameList;
     List<DataTask> task;
     Gate gate;
+    boolean debug;
 
     @Override
     public void onEnable() {
@@ -38,6 +39,7 @@ public final class BingoSystem extends JavaPlugin {
         plugin.getCommand("startbingo").setExecutor(new GameStart(plugin));
         plugin.getCommand("bingosystem").setExecutor(new CreateCommand(plugin));
         pluginManager.registerEvents(new GameListener(plugin),plugin);
+        debug=plugin.getConfig().getBoolean("debug");
     }
 
     @Override
@@ -52,5 +54,10 @@ public final class BingoSystem extends JavaPlugin {
     }
     public Gate getGate(){
         return gate;
+    }
+    public void Logger(String message){
+        if (debug){
+            plugin.getLogger().info(message);
+        }
     }
 }

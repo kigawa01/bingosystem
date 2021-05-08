@@ -2,5 +2,6 @@
 price: 500
 gate table name: gate
 game table name: game
+debug: false
 # Don't touch
 version: 1

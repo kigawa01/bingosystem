@@ -3,15 +3,17 @@ version: ${project.version}
 main: net.kigawa.plugin.kyosaba.system.bingosystem.BingoSystem
 api-version: 1.16
 authors: [ kigawa ]
+softdepend: [KigawaUtilLib]
 commands:
   sendbingo:
     description: send to bingo
     usage: /sendbingo
-    permission: bingosystem.game.startbingo
+    permission: bingosystem.sendbingo
   startbingo:
     description: start bingo
     usage: /startbingo <name>
-    permission: bingosystem.game.start
-  GameCreate:
-    description: create somethings
+    permission: bingosystem.startbingo
+  bingosystem:
+    description: create some things
     usage: /bingosystem <subcommand>
+    permission: bingosystem.bingosystem
